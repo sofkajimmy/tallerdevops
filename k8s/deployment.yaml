@@ -16,7 +16,7 @@ spec:
         app: tallerproteccion
     spec:
       containers:
-      - image: gcr.io/google-samples/node-hello:1.0
+      - image: tallerdevops:v1
         name: saludos-proteccion
         ports:
         - containerPort: 80
