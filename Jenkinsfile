@@ -9,9 +9,9 @@ pipeline {
         }
         stage('push') {            
             steps {
-                sh 'docker login -u kamentsa -p ${token}'
+                
                 sh 'docker push kamentsa/tallerdevops:${BUILD_NUMBER}'                 
-                sh 'docker logout'
+                
             }
         }
         
