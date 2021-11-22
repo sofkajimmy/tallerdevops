@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels: 
+    app: tallerproteccion
+  name: tallerproteccion
+  namespace: tallerdevops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tallerproteccion
+  template:
+    metadata:
+      labels:
+        app: tallerproteccion
+    spec:
+      containers:
+      - image: kamentsa/tallerdevops:v1
+        name: saludos-proteccion
+        ports:
+        - containerPort: 80
