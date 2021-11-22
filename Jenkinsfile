@@ -10,7 +10,9 @@ pipeline {
         stage('push') {            
             steps {
                 
-                sh 'docker push kamentsa/tallerdevops:${BUILD_NUMBER}'                 
+                 withDockerRegistry([ credentialsId: "dockerhublocal", url: "" ]) {
+                    sh 'docker push kamentsa/tallerdevops:${BUILD_NUMBER}'                 
+                }   
                 
             }
         }
