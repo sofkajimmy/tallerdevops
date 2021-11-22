@@ -16,7 +16,7 @@ spec:
         app: tallerproteccion
     spec:
       containers:
-      - image: tallerdevops:v1
+      - image: kamentsa/tallerdevops:v1
         name: saludos-proteccion
         ports:
         - containerPort: 80
