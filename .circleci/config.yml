@@ -23,7 +23,7 @@ jobs:
     steps:
       - run:
           name: "Deploy Develop"
-          command: "App Running"
+          command: "echo App Running"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
