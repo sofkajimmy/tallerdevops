@@ -7,8 +7,8 @@ version: 2.1
 jobs:
   build:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    enviroment: 
-      IMAGE_NAME: kamentsa/tallerdevops
+    #enviroment: 
+    #  IMAGE_NAME: kamentsa/tallerdevops
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
       - image: circleci/buildpack-deps:stretch #cimg/base:stable
@@ -19,7 +19,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: "Build image"
-          command: "docker build -t $IMAGE_NAME:latest  ."
+          command: "docker build -t kamentsa/tallerdevops:latest  ."
   deploy:
     docker:
       - image: cimg/base:stable
