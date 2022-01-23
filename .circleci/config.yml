@@ -37,5 +37,5 @@ workflows:
           name: build_app
       - deploy:
           name: deploy_dev
-          requires:
-            - build_app
+          #requires:
+          #  - build_app
