@@ -20,6 +20,14 @@ jobs:
       - run:
           name: "Build image"
           command: "docker build -t kamentsa/tallerdevops:latest  ."
+      - run:
+          name: "Push image"
+          command: |
+            echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
+            IMAGE_TAG="0.0.${CIRCLE_BUILD_NUM}"
+            docker tag kamentsa/tallerdevops:latest kamentsa/tallerdevops:$IMAGE_TAG
+            docker push kamentsa/tallerdevops:$IMAGE_TAG 
+            docker push kamentsa/tallerdevops:latest
   deploy:
     docker:
       - image: cimg/base:stable
@@ -37,5 +45,5 @@ workflows:
           name: build_app
       - deploy:
           name: deploy_dev
-          #requires:
-          #  - build_app
+          requires:
+            - build_app
