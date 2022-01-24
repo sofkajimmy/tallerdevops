@@ -28,7 +28,7 @@ jobs:
             docker tag kamentsa/tallerdevops:latest kamentsa/tallerdevops:$IMAGE_TAG
             docker push kamentsa/tallerdevops:$IMAGE_TAG 
             docker push kamentsa/tallerdevops:latest
-      - storage_artifacts:
+      - store_artifacts:
           path: index.html
   deploy:
     docker:
